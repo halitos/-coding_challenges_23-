@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div style="display: flex; flex-direction: column; padding: 50px; justify-content: space-around;">
+        <div>
+            <form action="">
+                <label for="">Text to Scroll</label><br>
+                <textarea type="text" id="textInput" rows="2" cols="30"></textarea><br>
+                <label for="">Screen Width</label><br>
+                <input type="number" id="screenWidthInput"><br>
+                <label for="">Speed in Miliseconds</label><br>
+                <input type="number" id="speedInput"><br>
+                <button id="start">Start</button>
+                <!-- <button id="reset">Clear</button> -->
+            </form>
+        </div>
+        <div id="scroll-container">
+            <p id="scroll-text"></p>
+        </div>
+        <button id="stop">Clear Screen
+        </button>
+    </div>
+    <script src="scroller.js" />
+    </script>
+</body>
+
+</html>

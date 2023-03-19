@@ -1,0 +1,39 @@
+#scroll-container {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  /* float: left; */
+  /* overflow: hidden; */
+  padding: 0 12px;
+  /* width: max-content; */
+  /* display: inline-block; */
+  margin-top: 100px;
+  width: 800px;
+  height: 100px;
+  background: #bfc9ca;
+}
+
+#scroll-text {
+  display: inline-block;
+  font-size: 2rem;
+}
+
+#textInput {
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 0.25rem;
+  margin-bottom: 20px;
+}
+
+#stop {
+  padding: 4px;
+  width: 5rem;
+  margin-top: 10px;
+}
+
+#start {
+  padding: 4px;
+  width: 3rem;
+  margin-top: 10px;
+}
