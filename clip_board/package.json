@@ -1,0 +1,19 @@
+{
+  "name": "copypaste",
+  "version": "1.0.0",
+  "description": "clipboard coding challenge",
+  "main": "clipboard.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "node clipboard.js"
+  },
+  "keywords": [
+    "coding",
+    "challenge"
+  ],
+  "author": "@halitOs",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.4.1"
+  }
+}
