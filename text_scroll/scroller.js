@@ -1,9 +1,9 @@
 const scroll = (text, screenWidth, speed) => {
   let position = screenWidth;
-  const boldIndexStart = text.match("B]")?.index;
-  const boldIndexEnd = text.match("/B")?.index;
-  const underlineIndexStart = text.match("U]")?.index;
-  const underlineIndexEnd = text.match("/U")?.index;
+  const boldIndexStart = text.match(/(\[B\])/)?.index;
+  const boldIndexEnd = text.match(/(\[\/B\])/)?.index;
+  const underlineIndexStart = text.match(/(\[U\])/)?.index;
+  const underlineIndexEnd = text.match(/(\[\/U\])/)?.index;
   const scrollText = document.getElementById("scroll-text");
 
   const interval = setInterval(() => {
@@ -11,7 +11,9 @@ const scroll = (text, screenWidth, speed) => {
 
     if (boldIndexStart && underlineIndexStart) {
       const textToBeBold = text.substring(boldIndexStart, boldIndexEnd + 4);
-      const boldText = textToBeBold.replace("B]", "").replace("[/B]", "");
+      const boldText = textToBeBold
+        .replace(/(\[B\])/, "")
+        .replace(/(\[\/B\])/, "");
 
       const newText = text.replace(textToBeBold, `<b>${boldText}</b>`);
       const textToBeUnderlined = newText.substring(
@@ -19,8 +21,8 @@ const scroll = (text, screenWidth, speed) => {
         underlineIndexEnd + 4
       );
       const underlinedText = textToBeUnderlined
-        .replace("U]", "")
-        .replace("[/U]", "");
+        .replace(/(\[U\])/, "")
+        .replace(/(\[\/U\])/, "");
 
       const newNewText = newText.replace(
         textToBeUnderlined,
@@ -32,7 +34,9 @@ const scroll = (text, screenWidth, speed) => {
       scrollText.innerHTML = string;
     } else if (boldIndexStart && boldIndexEnd) {
       const textToBeBold = text.substring(boldIndexStart, boldIndexEnd + 4);
-      const boldText = textToBeBold.replace("B]", "").replace("[/B]", "");
+      const boldText = textToBeBold
+        .replace(/(\[B\])/, "")
+        .replace(/(\[\/B\])/, "");
 
       const newText = text.replace(textToBeBold, `<b>${boldText}</b>`);
       let string = newText.slice(position - screenWidth, position);
@@ -44,8 +48,8 @@ const scroll = (text, screenWidth, speed) => {
         underlineIndexEnd + 4
       );
       const underlinedText = textToBeUnderlined
-        .replace("U]", "")
-        .replace("[/U]", "");
+        .replace(/(\[U\])/, "")
+        .replace(/(\[\/U\])/, "");
 
       const newText = text.replace(
         textToBeUnderlined,
