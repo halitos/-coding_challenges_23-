@@ -1,3 +1,7 @@
+// ** TO DO
+// 1. add [C] color style as well
+// 2. recursive check for [B] and [U] to deal with nested styles.
+
 const scroll = (text, screenWidth, speed) => {
   let position = screenWidth;
   const boldIndexStart = text.match(/(\[B\])/)?.index;
